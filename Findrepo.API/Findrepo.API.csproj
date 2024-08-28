@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Findrepo.Application\Findrepo.Application.csproj" />
+    <ProjectReference Include="..\src\Findrepo.Application\Findrepo.Application.csproj" />
     <ProjectReference Include="..\src\Findrepo.Infrastructure\Findrepo.Infrastructure.csproj" />
   </ItemGroup>
 
