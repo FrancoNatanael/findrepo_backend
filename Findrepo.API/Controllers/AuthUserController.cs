@@ -19,7 +19,7 @@ namespace Findrepo.API.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] UserLoginDTO userLogin)
         {
-            var token = _authService.GenerateToken(new User(userLogin.Name, userLogin.Email)/*user*/);
+            var token = _authService.GenerateToken(new User(userLogin.Email, userLogin.Password)/*user*/);
             return Ok(new { Token = token });
         }
     }
