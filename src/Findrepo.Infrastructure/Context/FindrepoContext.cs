@@ -1,5 +1,5 @@
 ﻿using Findrepo.Domain.Entities.User;
-using Findrepo.Infrastructure.Repositories;
+using Findrepo.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Findrepo.Infrastructure.Context
@@ -17,13 +17,13 @@ namespace Findrepo.Infrastructure.Context
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
-                    .UseSqlServer("Data Source=;Initial Catalog=name_db;User ID=user;Password=password");
+                    .UseSqlServer("Data Source=.\\SQLExpress;Database=Findrepo;Trusted_Connection=True;MultipleActiveResultSets=true");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserEFRepository());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
     }
 }

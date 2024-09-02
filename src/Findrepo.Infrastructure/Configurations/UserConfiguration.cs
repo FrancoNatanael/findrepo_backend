@@ -15,14 +15,18 @@ namespace Findrepo.Infrastructure.Configurations
             builder.Property(user => user.Id)
                .HasColumnName("Id").IsRequired();
 
+            builder.Property(user => user.Name)
+               .HasColumnName("Name").IsRequired();
+
+            builder.Property(user => user.LastName)
+               .HasColumnName("LastName").IsRequired();
+
             builder.Property(user => user.Password)
                .HasColumnName("Password").IsRequired();
 
             builder.Property(user => user.Email)
                .HasColumnName("Email").IsRequired();
 
-            builder.Property(user => user.Name)
-               .HasColumnName("Name").IsRequired();
         }
     }
 }
