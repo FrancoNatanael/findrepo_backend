@@ -1,4 +1,5 @@
 ﻿using Findrepo.Domain.Entities.User;
+using Findrepo.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Findrepo.Infrastructure.Context
@@ -11,9 +12,18 @@ namespace Findrepo.Infrastructure.Context
         {
         }
 
-        protected override void OnModelCreating(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder
+                    .UseSqlServer("Data Source=;Initial Catalog=name_db;User ID=user;Password=password");
+            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UserEFRepository());
         }
     }
 }
