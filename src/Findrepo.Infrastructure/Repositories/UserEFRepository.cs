@@ -21,11 +21,7 @@ namespace Findrepo.Infrastructure.Repositories
 
         public User GetUser(string email)
         {
-            var user = (from userDb in _context.User
-                        where userDb.Email.Equals(email)
-                        select userDb).ToList();
-
-            return user.FirstOrDefault();
+            return  _context.User.FirstOrDefault(userDb => userDb.Email == email);
         }
     }
 }
