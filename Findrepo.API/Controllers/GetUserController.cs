@@ -1,4 +1,6 @@
 ﻿using Findrepo.Application.Services;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Findrepo.API.Controllers
@@ -15,7 +17,8 @@ namespace Findrepo.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Post([FromQuery] string email)
+        [Authorize]
+        public IActionResult Get([FromQuery] string email)
         {
             var user = _userService.GetUserDTO(email);
             return Ok(user);

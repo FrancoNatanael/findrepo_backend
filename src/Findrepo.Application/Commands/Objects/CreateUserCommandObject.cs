@@ -1,13 +1,10 @@
-﻿namespace Findrepo.Domain.Entities.User
+﻿namespace Findrepo.Application.Commands.Objects
 {
-    public class User
+    public class CreateUserCommandObject
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-
-        public User() { }
     }
 }

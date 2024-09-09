@@ -17,7 +17,7 @@ namespace Findrepo.Infrastructure.Context
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
-                    .UseSqlServer("Data Source=.\\SQLExpress;Database=Findrepo;Trusted_Connection=True;MultipleActiveResultSets=true");
+                    .UseSqlServer("Data Source=.\\SQLExpress;Database=Findrepo;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
             }
         }
 

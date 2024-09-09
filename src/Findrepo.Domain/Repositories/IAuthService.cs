@@ -4,7 +4,7 @@ namespace Findrepo.Domain.Repositories
 {
     public interface IAuthService
     {
-        string GenerateToken(User user);
+        string GenerateToken(string email);
         bool ValidateToken(string token);
     }
 }

@@ -14,7 +14,22 @@ namespace Findrepo.Domain.Helpers
 
         public void CreateUser(string firstName, string lastName, string password, string email)
         {
-            _userRepository.CreateUser(firstName, lastName, password, email);
+            try
+            {
+                User user = new User()
+                {
+                    Email = email,
+                    LastName = lastName,
+                    Name = firstName,
+                    Password = password,
+                };
+
+                _userRepository.CreateUser(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public User GetUser(string email)

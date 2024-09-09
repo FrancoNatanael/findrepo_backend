@@ -13,9 +13,9 @@ namespace Findrepo.Application.Services
             _jwtTokenProvider = jwtTokenProvider;
         }
 
-        public string GenerateToken(User user)
+        public string GenerateToken(string email)
         {
-            return _jwtTokenProvider.CreateToken(user);
+            return _jwtTokenProvider.CreateToken(email);
         }
 
         public bool ValidateToken(string token)

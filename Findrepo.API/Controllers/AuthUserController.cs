@@ -1,6 +1,6 @@
 ﻿using Findrepo.Application.DTOS;
-using Findrepo.Domain.Entities.User;
 using Findrepo.Domain.Repositories;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Findrepo.API.Controllers
@@ -19,7 +19,7 @@ namespace Findrepo.API.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] UserLoginDTO userLogin)
         {
-            var token = _authService.GenerateToken(new User(userLogin.Email, userLogin.Password)/*user*/);
+            var token = _authService.GenerateToken(userLogin.Email);
             return Ok(new { Token = token });
         }
     }

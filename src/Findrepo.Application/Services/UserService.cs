@@ -1,4 +1,5 @@
-﻿using Findrepo.Application.DTOS;
+﻿using Findrepo.Application.Commands.Objects;
+using Findrepo.Application.DTOS;
 using Findrepo.Domain.Entities.User;
 using Findrepo.Domain.Helpers;
 
@@ -24,6 +25,12 @@ namespace Findrepo.Application.Services
                 LastName = user.LastName,
                 Password = user.Password,
             };
+        }
+
+        public Task CreateUser(CreateUserCommandObject commandObject)
+        {
+            _userHelper.CreateUser(commandObject.Name, commandObject.LastName, commandObject.Password, commandObject.Email);
+            return Task.CompletedTask;
         }
     }
 }

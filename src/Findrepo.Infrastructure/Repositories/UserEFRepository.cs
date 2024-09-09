@@ -13,9 +13,10 @@ namespace Findrepo.Infrastructure.Repositories
             _context = context;
         }
 
-        public void CreateUser(string firstName, string lastName, string password, string email)
+        public void CreateUser(User user)
         {
-            //
+            _context.User.Add(user);
+            _context.SaveChanges();
         }
 
         public User GetUser(string email)
