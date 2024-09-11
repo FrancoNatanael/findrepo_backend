@@ -1,6 +1,4 @@
-﻿using Findrepo.Domain.Entities.User;
-
-namespace Findrepo.Domain.Repositories
+﻿namespace Findrepo.Domain.Repositories
 {
     public interface IAuthService
     {

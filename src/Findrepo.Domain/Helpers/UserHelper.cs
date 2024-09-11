@@ -16,7 +16,7 @@ namespace Findrepo.Domain.Helpers
         {
             try
             {
-                User user = new User()
+                User user = new()
                 {
                     Email = email,
                     LastName = lastName,

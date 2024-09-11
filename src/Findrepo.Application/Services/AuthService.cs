@@ -1,5 +1,4 @@
-﻿using Findrepo.Domain.Entities.User;
-using Findrepo.Domain.Repositories;
+﻿using Findrepo.Domain.Repositories;
 using Findrepo.Infrastructure.Services;
 
 namespace Findrepo.Application.Services
